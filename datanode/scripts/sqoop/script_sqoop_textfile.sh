@@ -52,3 +52,13 @@ sqoop import \
 --as-textfile \
 --target-dir=/user/datapath/datasets/products \
 --delete-target-dir > /tmp/log_products.log
+
+sqoop import \
+--connect "jdbc:mysql://10.0.16.113:3310/bd_wilson" \
+--username=root \
+--password=root \
+--table Math_Students_1 \
+--split-by age \
+--as-textfile \
+--target-dir=/user/datapath/datasets/student_mat \
+--delete-target-dir > /tmp/log_customer.log
